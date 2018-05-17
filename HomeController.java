@@ -26,6 +26,13 @@ public class HomeController {
     public String training() {
         return "training";
     }
-
+    @GetMapping("/confirmMember")
+    public  String confirmMember() {
+        return "confirmMember";
+    }
+    @GetMapping("/vismedlemmer")
+    public  String vismedlemmer()  {
+        return "vismedlemmer";
+    }
 }
 

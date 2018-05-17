@@ -15,7 +15,6 @@ public class medlem {
     private int Zipcode;
     private String City;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date Birthdate;
     private String CPR;
     private int Phone;
     private String email;
@@ -25,14 +24,13 @@ public class medlem {
 
     }
 
-    public medlem(int memberId, String firstName, String lastName, String adress, int zipcode, String city, Date birthdate, String CPR, int phone, String email) {
+    public medlem(int memberId, String firstName, String lastName, String adress, int zipcode, String city, String CPR, int phone, String email) {
         this.memberId = memberId;
         this.FirstName = firstName;
         this.LastName = lastName;
         this.Adress = adress;
         this.Zipcode = zipcode;
         this.City = city;
-        this.Birthdate = birthdate;
         this.CPR = CPR;
         this.Phone = phone;
         this.email = email;
@@ -86,13 +84,6 @@ public class medlem {
         City = city;
     }
 
-    public Date getBirthdate() {
-        return Birthdate;
-    }
-
-    public void setBirthdate(Date birthdate) {
-        Birthdate = birthdate;
-    }
 
     public String getCPR() {
         return CPR;
