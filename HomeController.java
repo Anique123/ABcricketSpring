@@ -7,25 +7,34 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 
     @GetMapping("/members")
-    public String members(){
+    public String members() {
         return "members";
     }
+
     @GetMapping("/")
-    public String index(){
+    public String index() {
         return "index";
     }
+
     @GetMapping("/matches")
     public String matches() {
         return "matches";
     }
+
     @GetMapping("/competitions")
     public String competitions() {
         return "competitions";
     }
+
     @GetMapping("/training")
     public String training() {
         return "training";
     }
 
+    @GetMapping("/confirmMember")
+    public String confirmMember() {
+        return "confirmMember";
+
+    }
 }
 
