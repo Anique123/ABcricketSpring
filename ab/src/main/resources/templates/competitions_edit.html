@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Enrollment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <meta charset="UTF-8">
+    <title>Rediger stævne</title>
+</head>
+<body>
+<div class="container">
+    <h1>Rediger stævne</h1>
+    <form method="post" th:action="@{/competitions_edit}" th:object="${competition}">
+
+        <p>ID</p>
+        <input type="number" th:field="${competition.competitionID}" readonly="readonly" />
+
+        <p>Navn</p>
+        <input type="text" th:field="${competition.name}"/>
+
+        <p>Start dato</p>
+        <input type="date" th:field="${competition.startDate}"/>
+
+        <p>Slut dato</p>
+
+        <input type="date" th:field="${competition.endDate}"/>
+
+        <p>Bane</p>
+        <input type="text" th:field="${competition.ground}"/>
+
+        <p>Note</p>
+        <input type="text" th:field="${competition.note}"/>
+
+
+
+        <input type="submit" class="btn-primary" value="Gem"/>
+
+    </form>
+    <a href="/competitions"><button class="btn-primary " >Annuller</button></a>
+
+</div>
+
+</body>
+</html>

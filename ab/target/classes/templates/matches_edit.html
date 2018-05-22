@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Enrollment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <meta charset="UTF-8">
+    <title>Tilføj kamp</title>
+</head>
+<body>
+<div class="container">
+    <h1>Tilføj kamp</h1>
+    <form method="post" th:action="@{/matches_edit}" th:object="${match}">
+
+        <p>ID</p>
+        <input type="number" th:field="${match.matchID}" readonly="readonly" />
+
+        <p>Dato</p>
+        <input type="date"  th:field="${match.startTime}"/>
+
+        <p>Hjemme</p>
+        <input type="text" th:field="${match.homeTeam}"/>
+
+        <p>Ude</p>
+        <input type="text" th:field="${match.awayTeam}"/>
+
+        <p>Bane</p>
+        <input type="text" th:field="${match.ground}"/>
+
+
+        <input type="submit" class="btn-primary" value="Gem"/>
+
+
+
+    </form>
+
+    <a href="/matches"><button class="btn-primary " >Annuller</button></a>
+</div>
+
+</body>
+</html>

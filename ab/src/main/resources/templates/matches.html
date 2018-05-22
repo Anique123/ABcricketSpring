@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <title>Matches</title>
+
+</head>
+<body>
+<div class="container">
+
+    <h1>Kampe</h1>
+    <h3>Kampprogram</h3>
+
+    <a href="matches_create"><button class="btn-primary">Tilføj kamp</button> </a>
+<table class="table">
+    <thead style="background:lightblue">
+    <tr>
+        <th>Dato</th>
+        <th>Hjemme</th>
+        <th>Ude</th>
+        <th>Bane</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="match:${matches}">
+        <td th:text="${match.getStartTime()}"/>
+        <td th:text="${match.getHomeTeam()}"/>
+        <td th:text="${match.getAwayTeam()}"/>
+        <td th:text="${match.getGround()}"/>
+        <td>
+            <a th:href="'/matches_edit/'+${match.getMatchID()}"><button class="btn-warning" style="width:40%">Rediger</button></a>
+            <a th:href="'/matches_delete/'+${match.getMatchID()}"><button class="btn-danger" style="width:40%">Slet</button></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+    <hr>
+    <h3><a href="/">Tilbage</a></h3>
+</div>
+</body>
+</html>

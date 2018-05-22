@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <title>Stævner</title>
+
+</head>
+<body>
+<div class="container">
+
+    <h1>Stævner</h1>
+    <h3>Stævne liste</h3>
+
+    <a href="competitions_create"><button class="btn-primary">Tilføj stævne</button> </a>
+    <table class="table">
+        <thead style="background:lightblue">
+        <tr>
+            <th>Name</th>
+            <th>Start Dato</th>
+            <th>Slut Dato</th>
+            <th>Bane</th>
+            <th>Note</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="competition:${competitions}">
+            <td th:text="${competition.getName()}"/>
+            <td th:text="${competition.getStartDate()}"/>
+            <td th:text="${competition.getEndDate()}"/>
+            <td th:text="${competition.getGround()}"/>
+            <td th:text="${competition.getNote()}"/>
+            <td>
+                <a th:href="'/competitions_edit/'+${competition.getCompetitionID()}"><button class="btn-warning" style="width:30%">Rediger</button></a>
+                <a th:href="'/competitions_delete/'+${competition.getCompetitionID()}"><button class="btn-danger" style="width:30%">Slet</button></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h3><a href="/">Tilbage</a></h3>
+</div>
+</body>
+</html>
